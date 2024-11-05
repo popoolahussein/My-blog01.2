@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "deploy": "npm run build && npm run export && touch out/.nojekyll && git add out && git commit -m 'Deploy to GitHub Pages' && git push origin main"
   },
+  
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "highlight.js": "^11.10.0",
